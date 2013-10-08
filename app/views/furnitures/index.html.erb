@@ -1,0 +1,25 @@
+<% if @furnitures.blank? %>
+<h1>Upload CSV</h1>
+<%= form_for(Furniture.new, :html => {:multipart => true}) do |f| %>
+  <%= file_field_tag "csv_file" %><br/>
+  <%= submit_tag("Import") %>
+<% end %>
+
+<%else %>
+<h1>Search </h1>
+      <%= form_tag "/search" do %>
+      <textarea name='search'> </textarea>
+       <%= select_tag "order", options_for_select([["ascending","asc"],["descending","desc"]]) %>
+       <%= submit_tag "search"%>
+       <% end %>
+<% end %>
+
+Searched Filters Link
+<% @temp.each do |p| %>
+   <%= link_to p.id,furniture_path(p) %> <br>
+<% end %>
+</table>
+
+<br />
+
+

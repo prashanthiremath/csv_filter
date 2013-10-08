@@ -1,0 +1,17 @@
+<%= form_for(@furniture) do |f| %>
+  <% if @furniture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@furniture.errors.count, "error") %> prohibited this furniture from being saved:</h2>
+
+      <ul>
+      <% @furniture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+
+
+
+
+<TABLE border="1">
+<TR><TH>Kind<TH>Height<TH>Openable<TH>Emergency Exit
+<% @search_results.each do |p| %>
+<TR><TD><%= p.kind %><TD><%= p.height %><TD><%= p.openable %><TD><%= p.emergency_exit %>
+<% end %>
+</TABLE>
+
+
